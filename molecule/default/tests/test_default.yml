@@ -1,0 +1,17 @@
+# Molecule managed
+
+---
+file:
+  /etc/ssl/dh_512.pem:
+    exists: true
+    owner: root
+    group: root
+
+  /etc/ssl/dh_1024.pem:
+    exists: true
+    owner: root
+    group: root
+
+package:
+  openssl:
+    installed: true
