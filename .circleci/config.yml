@@ -16,12 +16,29 @@ jobs:
           path: ~/repo
 
       - run:
+          # this can be removed
+          name: Locate site Packages
+          command: python -c "import site; print(site.getsitepackages())"
+
+      - run:
           name: "Install pip"
           command: "apk add --update python python-dev py-pip build-base
                     openssl-dev libffi-dev linux-headers"
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "requirements.txt" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
       - run:
           name: "Install python dependencies"
           command: "pip install -r requirements.txt"
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
           name: "run tests"
