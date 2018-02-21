@@ -22,21 +22,25 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-0-dependencies-{{ checksum "requirements.txt" }}
-            - v1-0-dependencies-
+            - v1-1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-1-dependencies-
 
       - run:
-          name: "Install python dependencies"
-          command: "pip install -r requirements.txt"
+          name: "Install virtualenv"
+          command: |
+            pip install virtualenv
+            virtualenv .venv
+            source .venv/bin/activate
+            pip install -r requirements.txt
+
 
       - save_cache:
           paths:
-            - /usr/lib/python2.7/site-packages
-            - /usr/lib/site-python
-            - ~/.cache/pip
-            - /usr/local/bin/molecule
-          key: v1-0-dependencies-{{ checksum "requirements.txt" }}
+            - ~/.venv
+          key: v1-1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
           name: "run tests"
-          command: "molecule test"
+          command: |
+            source .venv/bin/activate
+            molecule test
