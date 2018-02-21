@@ -16,14 +16,14 @@ jobs:
           path: ~/repo
 
       - run:
+          name: "Install tools"
+          command: "apk add --update python python-dev py-pip build-base
+                    openssl-dev libffi-dev linux-headers"
+
+      - run:
           # this can be removed
           name: Locate site Packages
           command: python -c "import site; print(site.getsitepackages())"
-
-      - run:
-          name: "Install pip"
-          command: "apk add --update python python-dev py-pip build-base
-                    openssl-dev libffi-dev linux-headers"
 
       - restore_cache:
           keys:
