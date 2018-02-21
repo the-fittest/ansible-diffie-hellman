@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: "run tree"
-          command: "tree /usr/lib/python2.7/site-packages"
+          command: "ls -al /usr/lib/python2.7/site-packages"
 
       - run:
           name: "run tests"
