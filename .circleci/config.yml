@@ -36,5 +36,9 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
+          name: "run tree"
+          command: "tree /usr/lib/python2.7/site-packages"
+
+      - run:
           name: "run tests"
           command: "molecule test"
