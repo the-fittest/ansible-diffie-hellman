@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: "run tree"
-          command: "ls -al /usr/lib/python2.7/site-packages"
+          command: "ls -al /usr/lib/python2.7/site-packages/molecule"
 
       - run:
           name: "run tests"
