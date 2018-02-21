@@ -33,11 +33,12 @@ jobs:
           paths:
             - /usr/lib/python2.7/site-packages
             - /usr/lib/site-python
+            - ~/.cache/pip
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
-          name: "run tree"
-          command: "ls -al /usr/lib/python2.7/site-packages/molecule"
+          name: "Install python dependencies"
+          command: "pip install -r requirements.txt"
 
       - run:
           name: "run tests"
