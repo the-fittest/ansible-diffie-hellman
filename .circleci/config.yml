@@ -6,14 +6,14 @@ jobs:
     docker:
       - image: docker:stable
 
-    working_directory: ~/diffie-hellmann
+    working_directory: ~/$CIRCLE_PROJECT_REPONAME
 
     steps:
       - setup_remote_docker:
           docker_layer_caching: true
 
       - checkout:
-          path: ~/diffie-hellmann
+          path: ~/$CIRCLE_PROJECT_REPONAME
 
       - run:
           name: "Install tools"
@@ -22,8 +22,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-2-dependencies-{{ checksum "requirements.txt" }}
-            - v1-2-dependencies-
+            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-dependencies-
 
       - run:
           name: "Install virtualenv"
@@ -38,7 +38,7 @@ jobs:
           paths:
             - ~/.venv
             - ~/.cache/pip
-          key: v1-2-dependencies-{{ checksum "requirements.txt" }}
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
           name: "run tests"
