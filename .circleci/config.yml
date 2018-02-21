@@ -6,14 +6,14 @@ jobs:
     docker:
       - image: docker:stable
 
-    working_directory: ~/$CIRCLE_PROJECT_REPONAME
+    working_directory: ~/diffie-hellmann
 
     steps:
       - setup_remote_docker:
           docker_layer_caching: true
 
       - checkout:
-          path: ~/$CIRCLE_PROJECT_REPONAME
+          path: ~/diffie-hellmann
 
       - run:
           name: "Install tools"
