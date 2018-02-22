@@ -7,11 +7,13 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    image: ubuntu:16.04
+    image: brandfrisch/ubuntu-16.04:latest
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
+    options:
+      r: /usr/local/src/ansible-lint-rules
 scenario:
   name: default
 verifier:
