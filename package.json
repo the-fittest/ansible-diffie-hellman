@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/brandfrisch/diffie-hellmann#readme",
   "release": {
+    "tagFormat": "${version}",
     "verifyConditions": [],
     "publish": [
       {
