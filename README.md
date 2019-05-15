@@ -1,7 +1,7 @@
-diffie-hellmann
+diffie-hellman
 =========
 
-This is a rule to setup diffie-hellmann on a unix system
+This is a rule to setup diffie-hellman on a unix system
 
 Requirements
 ------------
