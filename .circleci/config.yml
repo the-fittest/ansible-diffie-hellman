@@ -5,11 +5,11 @@ jobs:
     machine:
       enabled: true
 
-    working_directory: ~/diffie-hellmann
+    working_directory: ~/diffie-hellman
 
     steps:
       - checkout:
-          path: ~/diffie-hellmann
+          path: ~/diffie-hellman
 
       - run:
           name: "System package update"

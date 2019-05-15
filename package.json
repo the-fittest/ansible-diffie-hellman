@@ -1,17 +1,17 @@
 {
-  "name": "diffie-hellmann",
+  "name": "diffie-hellman",
   "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/brandfrisch/diffie-hellmann.git"
+    "url": "git+ssh://github.com/the-fittest/diffie-hellman.git"
   },
   "author": "Alexander Jaeger",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brandfrisch/diffie-hellmann/issues"
+    "url": "https://github.com/the-fittest/diffie-hellman/issues"
   },
-  "homepage": "https://github.com/brandfrisch/diffie-hellmann#readme",
+  "homepage": "https://github.com/the-fittest/diffie-hellman#readme",
   "scripts": {
     "commitmsg": "commitlint -e ",
     "precommit": "yamllint . && ansible-lint -R -r ./node_modules/ansible-lint-rules/rules . || exit 1",

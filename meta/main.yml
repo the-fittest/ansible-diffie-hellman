@@ -1,16 +1,13 @@
 ---
 galaxy_info:
   author: Alexander Jäger
-  description: your description
+  description: Diffie Hellman
   company: Brandfrisch
   license: Apache License 2.0
   min_ansible_version: 2.4
   platforms:
-    - name: Debian
-      versions:
-        - jessie
     - name: Ubuntu
       versions:
-        - xenial
+        - bionic
   galaxy_tags: []
 dependencies: []

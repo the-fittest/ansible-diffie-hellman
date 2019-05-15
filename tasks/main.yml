@@ -1,24 +1,24 @@
 ---
-# tasks file for diffie-hellmann
+# tasks file for diffie-hellman
 
-- name: Install diffie-hellmann packages
+- name: Install diffie-hellman packages
   package:
     name: "{{ item }}"
     state: present
   with_items:
-    - "{{ diffie_hellmann_packages }}"
-    - "{{ diffie_hellmann_additional_packages }}"
+    - "{{ diffie_hellman_packages }}"
+    - "{{ diffie_hellman_additional_packages }}"
   tags:
     - package
-    - diffie-hellmann
+    - diffie-hellman
 
-- name: Generating Diffie-Hellmann pems
-  shell: "openssl gendh -out /etc/ssl/dh_{{ item }}.pem -2 {{ item }}"
+- name: Generating Diffie-hellman pems
+  shell: "openssl dhparam -out /etc/ssl/dh_{{ item }}.pem -2 {{ item }}"
   args:
     creates: "/etc/ssl/dh_{{ item }}.pem"
   with_items:
-    - "{{ diffie_hellmann_strength }}"
+    - "{{ diffie_hellman_strength }}"
   tags:
     - config
-    - diffie-hellmann
+    - diffie-hellman
     - skip_ansible_lint

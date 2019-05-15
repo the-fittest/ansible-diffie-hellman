@@ -2,8 +2,8 @@
 - name: Converge
   hosts: all
   vars:
-    diffie_hellmann_strength:
+    diffie_hellman_strength:
       - 512
       - 1024
   roles:
-    - role: diffie-hellmann
+    - role: diffie-hellman

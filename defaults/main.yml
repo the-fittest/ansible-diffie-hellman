@@ -1,11 +1,12 @@
 ---
-# defaults file for diffie-hellmann
-diffie_hellmann_strength:
+# defaults file for diffie-hellman
+diffie_hellman_strength:
   - 512
   - 1024
   - 2048
   - 4096
 
-diffie_hellmann_packages:
+diffie_hellman_packages:
   - openssl
-diffie_hellmann_additional_packages: []
+
+diffie_hellman_additional_packages: []

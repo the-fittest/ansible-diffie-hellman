@@ -6,8 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: diffie-hellmann-ubuntu-1604
-    image: brandfrisch/ubuntu-16.04:latest
+  - name: diffie-hellman-ubuntu-1804
+    image: brandfrisch/ubuntu-18.04:latest
     privileged: True
     command: /lib/systemd/systemd
     volumes:
